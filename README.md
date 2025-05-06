@@ -97,12 +97,10 @@ Files to turn in : benchmark.py
 
 Allowed functions : import timeit
 
-Imagine that your task is to get all the Gmail addresses from a list of email addresses
-from the list that are Gmails. The usual approach is to create a loop, and iterating from
+Imagine that your task is to get all the Gmail addresses from a list of email addresses. The usual approach is to create a loop, and iterating from
 the initial list append the required values to a new list.
 
-But that can be inefficient if we are talking about large amounts of data. There is a
-more efficient and pythonic way to do the task – list comprehensions.
+But that can be inefficient if we are talking about large amounts of data. There is a more efficient and pythonic way to do the task – list comprehensions.
 
 In this exercise, you need to:
 
