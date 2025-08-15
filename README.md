@@ -13,58 +13,49 @@ Summary: Today we will help you write code that works faster.
 3. [Chapter III](#chapter-iii) \
     3.1. [Specific instructions for the day](#specific-instructions-for-the-day)
 4. [Chapter IV](#chapter-iv) \
-    4.1. [Exercise 00 : List comprehensions](#exercise-00-list-comprehensions)
+    4.1. [Exercise 00. List comprehensions](#exercise-00-list-comprehensions)
 5. [Chapter V](#chapter-v) \
-    5.1. [Exercise 01 : Map](#exercise-01-map)
+    5.1. [Exercise 01. Map](#exercise-01-map)
 6. [Chapter VI](#chapter-vi) \
-    6.1. [Exercise 02 : Filter](#exercise-02-filter)
+    6.1. [Exercise 02. Filter](#exercise-02-filter)
 7. [Chapter VII](#chapter-vii) \
-    7.1. [Exercise 03 : Reduce](#exercise-03-reduce)
+    7.1. [Exercise 03. Reduce](#exercise-03-reduce)
 8. [Chapter VIII](#chapter-viii) \
-    8.1. [Exercise 04 : Counter](#exercise-04-counter)
+    8.1. [Exercise 04. Counter](#exercise-04-counter)
 9. [Chapter IX](#chapter-ix) \
-    9.1. [Exercise 05 : Generator](#exercise-05-generator)
+    9.1. [Exercise 05. Generator](#exercise-05-generator)
     
    
 ## Chapter I
 
 ### Foreword
 
-* There are two words in English that are commonly confused: “efficiency” “and
-effectiveness”.
-* To highlight the difference, let us tell you a short joke.
-* My motto is “Efficiency. Efficiency. Efficiency.” Oops. I guess I only need to say it once
-* Or as Peter Drucker once said: “Efficiency is doing things right; effectiveness is
-doing the right things”
-* Your code should not only be effective, but efficient as well. And vice versa
-* One of the best games for learning how to be efficient is Factorio. Google it.
+- There are two English words that are often confused: "efficiency" and "effectiveness".
+- To highlight the difference, here's a short joke: \
+    My motto is "Efficiency. Efficiency. Efficiency". Oops! I guess I only need to say it once.
+- Or, as Peter Drucker once said: "Efficiency is doing things right; effectiveness is doing the right things".
+- Your code should be both effective and efficient. And vice versa.
+- One of the best games for learning efficiency is Factorio. Google it.
 
-Download it. And try to get back to MODULE 4 Not everyone will be able to.
+Download it. Try to get back to Module 4. Not everyone will be able to.
 
 ## Chapter II
 
 ### Instructions
 
-* Use this page as your only reference. Do not listen to any rumors or speculations
-about how to prepare your solution.
-* Here and further on we use Python 3 as the only correct version of Python.
-* The python files for python exercises (module01, module02, module03) must have
-the following block in the end: ```if __name__ == ‘__main__’```.
+* Use this page as your only reference. Do not pay attention to rumors or speculation about how to prepare your solution.
+* Here and throughout, we use Python 3 as the only correct version of Python.
+* The python files for python exercises (module01, module02, module03) must have the following block at the end: `if __name__ == ‘__main__’`.
 * Pay attention to the permissions of your files and directories.
 * To be assessed your solution must be in your GIT repository.
-* Your solutions will be evaluated by your piscine mates.
-* You should not leave in your directory any other file than those explicitly specified
-by the exercise instructions. It is recommended that you modify your .gitignore to
-avoid any accidents.
+* Your solutions will be evaluated by your peers in the bootcamp.
+* You should not leave any other files in your directory other than those explicitly specified in the exercise instructions. It is recommended that you modify your .gitignore to avoid any accidents.
 * Your solution must be in your GIT repository for evaluation. Always push only to the develop branch! The master branch will be ignored. Work in the src directory.
-* When you need to get precise output in your programs, it is forbidden to display a
-precalculated output instead of performing the exercise correctly.
-* Have a question? Ask your neighbor on the right. If that fails, try your neighbor
-on the left.
-* Your reference material: peers / Internet / Google.
-* You can ask questions in Slack.
-* Read the examples carefully. They may require things that are not otherwise specified in the subject.
-* And may the Force be with you!
+* When you need to get precise output in your programs, it is forbidden to display a precalculated output instead of performing the exercise correctly.
+* Have a question? Ask your neighbor on the right. If that fails, try your neighbor on the left.
+* Your reference materials are your peers, the internet, and Google.
+* Read the examples carefully. They may require information that is not specified elsewhere in the subject.
+* May the Force be with you!
 
 ## Chapter III
 
@@ -77,55 +68,39 @@ on the left.
         # your tests and your error handling
     ```
   
-* Any exception not caught will invalidate the work, even in the event of an error
-that you were asked to test.
-* No imports are allowed, except those explicitly mentioned in the section “Autho-
-rized functions” of the title block of each exercise.
-* You can use any built-in function if it is not prohibited in the exercise.
+* Any exception that goes uncaught will invalidate the work, even if it is an error that you were asked to test.
+* No imports are allowed except those mentioned in the "Authorized Functions" section of each exercise's title block.
+* You can use any built-in function unless it is prohibited in the exercise.
 
 ## Chapter IV
 
-### Exercise 00 : List comprehensions
+### Exercise 00. List comprehensions
 
-Exercise 00
+- Turn-in directory: `ex00/`.
+- Files to turn in: `benchmark.py`.
+- Allowed functions: `import timeit`.
 
-List comprehensions
+Imagine your task is to find all the Gmail addresses in a list of email addresses. The usual approach is to create a loop and iterate through the initial list, appending the required values to a new list.
 
-Turn-in directory : ex00/
+However, this method can be inefficient when dealing with large amounts of data. A more efficient, Pythonic way to complete the task is to use list comprehensions.
 
-Files to turn in : benchmark.py
+For this exercise, you need to:
+1. Write two functions:
+  - In the first, implement the usual approach with a loop and append.
+  - In the second, use a list comprehension instead.
+2. Use `timeit` to measure the time required to run those functions 90,000,000 times and compare them.
+3. Put this into a script that prints: "It is better to use a list comprehension" if the time required for the list comprehension is less than or equal to the time required for the loop and: "It is better to use a loop" if not.
+4. Also, add the time values at the end, after the printout described above. Order them from shortest to longest.
 
-Allowed functions : import timeit
-
-Imagine that your task is to get all the Gmail addresses from a list of email addresses. The usual approach is to create a loop, and iterating from
-the initial list append the required values to a new list.
-
-But that can be inefficient if we are talking about large amounts of data. There is a more efficient and pythonic way to do the task – list comprehensions.
-
-In this exercise, you need to:
-
-* write two functions:
-  * in the first you need to implement the usual approach with a loop and an
-  append
-  * in the second you use a list comprehension instead
-* use timeit to measure the time required to run those functions 90, 000, 000 times
-and compare them
-* put this into a script that prints “it is better to use a list comprehension” if the
-corresponding time is less or equal than that of the loop, and “it is better to use a
-loop” if not,
-* also, add the time values at the end, after the print described above. Order them
-from shortest to longest.
-
-Please, use the following list of email addresses: 
+Please use the following list of email addresses:
 ```
 emails = [’john@gmail.com’, ’james@gmail.com’, ’alice@yahoo.com’, 
 ’anna@live.com’, ’philipp@gmail.com’]
 ```
 
-Duplicate the values 5 times. As a result, the list will contain 25 elements, but only 5 unique
-ones.
+5. Duplicate each value five times. The list will then contain 25 elements, but only five unique ones.
 
-An example of the script being launched:
+Here is an example of the script being launched:
 
 ```
 $ ./benchmark.py
@@ -135,37 +110,24 @@ it is better to use a list comprehension
 
 ## Chapter V
 
-### Exercise 01 : Map
+### Exercise 01. Map
 
-Exercise 01
+- Turn-in directory: `ex01/`.
+- Files to turn in: `benchmark.py`.
+- Allowed functions: `import timeit`.
 
-Map
+Okay, you probably noticed the difference: list comprehensions are slightly more efficient and readable than loops. However, that is not the only option.
 
-Turn-in directory : ex01/
+There's also `map()`!
 
-Files to turn in : benchmark.py
+Map comes from functional programming. With map, you don't have to iterate through a list.
 
-Allowed functions : import timeit
-
-Ok, chances are that you saw the difference: list comprehensions are slightly more
-efficient than loops and more readable as well. But that is not the only option available.
-
-There is also map()!
-
-Map comes from functional programming. You do not have to iterate through a list.
-
-You can apply a function to an iterable. That is what you are going to do in this exercise!
+Instead, you can apply a function to an iterable. That's what you're going to do in this exercise!
 
 Modify the script from the previous exercise:
 
-* Write a function that does the same thing: creates a list with Gmail addresses
-taken from the initial list of emails (25 elements), but using a map. Try map() and
-list(map()). Note the difference in speed
-* You still need to compare which function is faster, but now you have three options:
-loop, list comprehension, and map, and add one more phrase according to this in
-your code “it is better to use a map” and at the end, you need to display all three
-time values with the same condition: they should be in the ascending order by
-length.
+1. Write a function that that does the same thing: creates a list of Gmail addresses from the initial list of 25 emails but using a map. Try `map()` and `list(map())`. Note the difference in speed.
+2. You still need to compare which function is faster. Now, you have three options: loop, list comprehension, and map. Add one more phrase to your code: "It is better to use a map". Finally, display all three time values in ascending order by length.
 
 The example:
 ```
@@ -178,26 +140,15 @@ Check the results of all the functions. Are they all identical? They do not have
 
 ## Chapter VI
 
-### Exercise 02 : Filter
+### Exercise 02. Filter
 
-Exercise 02
+- Turn-in directory: `ex02/`.
+- Files to turn in: `benchmark.py`.
+- Allowed functions: `import timeit`, `import sys`.
 
-Filter
+Did you notice that what you did in the previous exercises was filtering? Why not use the corresponding `filter()` function instead of list comprehensions and maps? It works almost the same way as `map()`. You'll love it!
 
-Turn-in directory : ex02/
-
-Files to turn in : benchmark.py
-
-Allowed functions : import timeit, import sys
-
-* Did you notice that what you did in the previous exercises was filtering? Why
-not use the corresponding function filter() instead of those list comprehensions and
-maps? It works almost the same as map(). You will love it!
-* Add a new function to your benchmark that uses filter(). But this time let us
-refactor the code. Let us create a script that takes the name of the function (loop,
-list comprehension, map, filter) to your benchmark and the number of calls it should
-perform for the benchmark. In return, it should give the time spent to make that
-number of calls of the function.
+Add a new function to your benchmark that uses `filter()`. This time, let's refactor the code. Create a script that takes the name of the function (loop, list comprehension, map, or filter) and the number of calls to be performed for the benchmark. In return, the script should provide the time it takes to make that number of calls to the function.
 
 The examples:
 ```
@@ -212,33 +163,19 @@ $ ./benchmark.py
 
 ## Chapter VII
 
-### Exercise 03 : Reduce
+### Exercise 03. Reduce
 
-Exercise 03
+- Turn-in directory: `ex03/`.
+- Files to turn in: `benchmark.py`.
+- Allowed functions: `import timeit`, `import sys`, `from functools import reduce`.
 
-Reduce
+In addition to `map()` and `filter()`, there is another function that may be useful to you in the future: `reduce()`. You can use it instead of loops, and it is usually more efficient for calculating sums. In this exercise, you need to calculate the sum of the squares up to the given argument. For example, if 5 is given, the sum is `1 + 4 + 9 + 16 + 25 = 55`.
 
-Turn-in directory : ex03/
+1. In your script, create two functions:
+    - In the first, implement the usual approach with a loop and `sum = sum + i*i`.
+    - In the second, use `reduce()`.
 
-Files to turn in : benchmark.py
-
-Allowed functions : import timeit, import sys, from functools import reduce
-
-Besides map() and filter() there is another function that might be useful for you in
-the future – reduce(). You can also use it instead of loops and, in most cases, it will be
-more efficient when you need to calculate a sum. In this exercise, you need to calculate
-the sum of squares up to the number given as an argument. For example, if 5 was given,
-the sum will be ```1 + 4 + 9 + 16 + 25 = 55```
-
-In your script create two functions:
-
-* in the first – you need to implement the usual approach with a loop and ```sum = sum + i*i```
-* in the second – you use a reduce() instead
-
-* Let us create a script that takes as an argument the name of the function (loop or
-reduce), the number of calls it should perform for the benchmark, and the number for
-the sum of the calculation of squares. In return, it should give the time spent to make
-that number of calls of the function.
+2. Let's create a script that takes the name of the function (loop or reduce) as an argument, as well as the number of calls to be performed for the benchmark and the number for the sum of the calculation of squares. In return, it should provide the time it takes to make that number of calls to the function.
 
 The example:
 ```
@@ -250,35 +187,19 @@ $ ./benchmark.py reduce 10000000 5
 
 ## Chapter VIII
 
-### Exercise 04 : Counter
+### Exercise 04. Counter
 
-Exercise 04
+- Turn-in directory: `ex04/`.
+- Files to turn in: `benchmark.py`.
+- Allowed functions: `import timeit`, `import random`, `from collections import Counter`.
 
-Counter
+"Know the built-in functions" is one of the most important commandments for a Python coder. Here we will use the collections module that comes with Python. It contains several container data types, one of which is **Counter**. Counter is very handy when you need to count unique values in a list, for example. It is also faster than any function you could write yourself. But don't take our word for it; check it out for yourself!
 
-Turn-in directory : ex04/
-
-Files to turn in : benchmark.py
-
-Allowed functions : import timeit, import random, from collections import
-Counter
-
-“Know the built-in functions” is one of the most vital commandments for a Python
-coder. Here we are going to use the collections module that is shipped with Python.
-It contains a number of container data types - we will use Counter. It is very handy,
-for example, when you need to count unique values in a list. And it is faster than any
-function that you can write by yourself. But don’t take our word for it, check it out for
-yourself!
-
-* generate a list with 1 000 000 random values from 0 to 100 (remember list compre-
-hensions?)
-* write a function that creates a dict out of the list where the keys are the numbers
-from 0 to 100 and the values are their counts
-* write a function that returns the top 10 most common numbers where the keys are
-the numbers and the values are the counts, the input is the list
-* solve 2 and 3 using Counter
-* make a comparison: your script should display the time spent for 2 and 3 with
-Counter and without it
+1. Generate a list with one million random values from 0 to 100 (remember list comprehensions?).
+2. Write a function that creates a dictionary from the list where the keys are the numbers from 0 to 100 and the values are their counts.
+3. Write a function that returns the top ten most common numbers, where the keys are the numbers and the values are the counts. The input is the list.
+4. Solve steps 2 and 3 using Counter.
+5. Make a comparison: your script should display the time spent on steps 2 and 3 with and without Counter.
 
 Example:
 ```
@@ -291,38 +212,19 @@ Counter's top: 0.017573
 
 ## Chapter IX
 
-### Exercise 05 : Generator
+### Exercise 05. Generator
 
-Exercise 05
+- Turn-in directory: `ex05/`.
+- Files to turn in: `ordinary.py`, `generator.py`.
+- Allowed functions: `import sys`, `import resource`; for Windows: `import sys`, `import os`, `import psutil`.
 
-Generator
+Code efficiency is not only about time, but also about RAM usage. This is especially important when working with big data. Could smaller-scale data also cause you trouble? You're already used to conducting experiments. Let's do another one.
 
-Turn-in directory : ex05/
-
-Files to turn in : ordinary.py, generator.py
-
-Allowed functions : import sys, import resource; for Windows: import sys, import os, import
-psutil
-
-Code efficiency is not only about the time spent, but also about the RAM used. This
-is quite important if you work with big data. Or maybe smaller-scale data can also cause
-you trouble? You have already got used to making experiments. Let us do yet another
-one.
-
-* Download the [MovieLens dataset](https://files.grouplens.org/datasets/movielens/ml-25m.zip).
-* Unzip it. You will need the file ratings.csv (678.3 MB is not that big, right?).
-* Create the first script, ordinary.py. It should have only one function: it reads all
-the file lines into a list and then returns it. In the main program, write a loop that
-iterates through the list and calls pass. You should give the path to the file as an
-argument to the script
-* Create the second script, generator.py. It does exactly the same thing, but in your
-function, you must use a generator. It uses the keyword yield to read one line at a
-time and returns it to the caller. In the main program, write a loop that iterates
-through the generator and calls pass. You should give the path to the file as an
-argument to the script.
-* Both scripts should display Peak memory usage in GB and User mode time +
-System mode time in seconds. If you have Windows OS, use the corresponding
-functions to get the same metrics.
+1. Download the [MovieLens dataset](https://files.grouplens.org/datasets/movielens/ml-25m.zip).
+2. Unzip it. You will need the `ratings.csv` file (678.3 MB isn't that big, right?).
+3. Create the first script `ordinary.py`. It should have only one function: reading all the lines in the file into a list and returning it. In the main program, write a loop that iterates through the list and calls pass. Give the path to the file as an argument to the script.
+4. Create the second script `generator.py`. This script does the same thing, but your function must use a generator. The keyword `yield` is used to read one line at a time and return it to the caller. In the main program, write a loop that iterates through the generator and calls pass. Give the path to the file as an argument to the script.
+5. Both scripts should display Peak memory usage in GB and user mode time plus System mode time in seconds. If you have a Windows OS, use the corresponding functions to get the same metrics.
 
 Example:
 ```
