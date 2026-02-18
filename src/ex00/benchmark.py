@@ -46,9 +46,7 @@ if __name__ == '__main__':
     # Сравниваем и выводим результат
     if comprehension_time <= loop_time:
         print("it is better to use a list comprehension")
-        # Выводим от меньшего к большему
         print(f"{comprehension_time} vs {loop_time}")
     else:
         print("it is better to use a loop")
-        # Выводим от меньшего к большему
         print(f"{loop_time} vs {comprehension_time}")
