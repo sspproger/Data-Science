@@ -41,9 +41,9 @@ if __name__ == '__main__':
     ] * 5
     
     # Замеряем время выполнения
-    loop_time = measure_time(get_gmail_with_loop, emails, 1_000_000)
-    comprehension_time = measure_time(get_gmail_with_comprehension, emails, 1_000_000)
-    map_time = measure_time(get_gmail_with_map, emails, 1_000_000)
+    loop_time = measure_time(get_gmail_with_loop, emails, 100_000)
+    comprehension_time = measure_time(get_gmail_with_comprehension, emails, 100_000)
+    map_time = measure_time(get_gmail_with_map, emails, 100_000)
 
     # Собираем все времена в список для сортировки и сортируем от меньшего к большему
     times = [(loop_time, "loop"), (comprehension_time, "comprehension"), (map_time, "map")]
