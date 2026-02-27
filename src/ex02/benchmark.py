@@ -2,6 +2,9 @@
 import timeit
 import sys
 
+def is_gmail(email):
+    """Отдельная функция для проверки Gmail"""
+    return email.endswith('@gmail.com')
 
 def get_gmail_with_loop(emails):
     """Находит Gmail адреса с помощью цикла"""
@@ -18,14 +21,16 @@ def get_gmail_with_comprehension(emails):
 
 
 def get_gmail_with_map(emails):
-    """Находит Gmail адреса с помощью map"""
+    """
+    Функция которая находит все Gmail адреса с помощью map
+    Возвращает email для gmail адресов и None для остальных
+    """
     return list(map(lambda email: email if email.endswith('@gmail.com') else None, emails))
-
+    
 
 def get_gmail_with_filter(emails):
     """Находит Gmail адреса с помощью filter"""
-    return list(filter(lambda email: email.endswith('@gmail.com'), emails))
-
+    return list(filter(is_gmail, emails))
 
 def measure_time(func, emails, number_of_calls):
     """Замеряет время выполнения функции"""
