@@ -23,7 +23,7 @@ def get_gmail_with_map(emails):
     Возвращает email для gmail адресов и None для остальных
     """
     return list(map(lambda email: email if email.endswith('@gmail.com') else None, emails))
-
+    
 def measure_time(func, emails, number_of_runs):
     """
     Замеряет время выполения функции
