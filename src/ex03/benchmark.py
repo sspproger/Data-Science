@@ -3,6 +3,10 @@ import timeit
 import sys
 from functools import reduce
 
+def add_square(total, i):
+    """Добавляет квадрат числа к сумме"""
+    return total + i * i
+
 def sum_squares_loop(n):
     """Вычисляет сумму квадратов от 1 до n с помощью цикла"""
     total = 0
@@ -12,7 +16,8 @@ def sum_squares_loop(n):
 
 def sum_squares_reduce(n):
     """Вычисляет сумму квадратов от 1 до n с помощью reduce"""
-    return reduce(lambda acc, x: acc + x * x, range(1, n + 1), 0)
+    #return reduce(lambda total, i: total + i * i, range(1, n + 1), 0)
+    return reduce(add_square, range(1, n + 1), 0)
 
 if __name__ == '__main__':
     # Проверяем количество аргументов
