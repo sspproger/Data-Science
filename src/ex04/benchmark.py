@@ -4,12 +4,14 @@ import random
 from collections import Counter
 
 def count_with_manual(numbers):
-    counts = {i: 0 for i in range(101)}
+    """Считает, сколько раз каждое число от 0 до 100 встречается в списке numbers"""
+    counts = {i:0 for i in range(101)}
     for num in numbers:
         counts[num] += 1
     return counts
 
 def top_ten_manual(numbers):
+    """Возвращает список из 10 кортежей самых часто встречающихся чисел из списка numbers"""
     counts = count_with_manual(numbers)
     sorted_counts = sorted(counts.items(), key=lambda item: item[1], reverse=True)
     return sorted_counts[:10]
