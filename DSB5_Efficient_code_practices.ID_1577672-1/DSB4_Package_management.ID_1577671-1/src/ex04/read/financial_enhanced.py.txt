@@ -1,0 +1,95 @@
+import httpx          		# Для HTTP-запросов (аналог requests, но обычно быстрее)
+from bs4 import BeautifulSoup   # Для парсинга HTML
+import sys            		# Для получения аргументов командной строки
+import time           		# Не используется (закомментирован sleep)
+import re             		# Для регулярных выражений (поиск по шаблонам)
+
+response - ответ
+field - поле
+
+Функция parse_html(response, field)
+Назначение: Извлекает финансовые данные из HTML-страницы.
+Функция ищет в HTML таблицу с финансовыми данными, находит строку с нужным названием поля (например "Total Revenue") и возвращает все числа из этой строки.
+
+def parse_html(response, field):
+    # 1. Парсим HTML из ответа сервера
+    soup = BeautifulSoup(response.text, 'html.parser')
+
+    # 2. Ищем все строки таблицы с классом 'row lv-0'
+    rows = soup.find_all('div', {'class': re.compile('row lv-0')})
+    
+    # 3. Если строк не найдено - ошибка
+    if not rows:
+        raise Exception('Financial data table not found for the given ticker')
+
+    # 4. Перебираем все найденные строки
+    for row in rows:
+        # 5. В каждой строке ищем название финансового поля
+        financial_field = row.find('div', {'class': re.compile('rowTitle')})
+        
+        # 6. Если нашли нужное поле (совпадает с аргументом field)
+        if financial_field and financial_field.text.strip() == field:
+            # 7. Ищем все значения в этой строке (колонки)
+            values = row.find_all('div', {'class': re.compile('column yf-')})
+            
+            # 8. Извлекаем текст из каждого значения
+            txt = [value.text.strip() for value in values]
+            
+            # 9. Возвращаем список значений
+            return txt
+
+    # 10. Если поле не найдено - ошибка
+    raise Exception(f'Financial field "{field}" not found in the statement')
+
+
+def main():
+    try:
+        # 1. Получаем аргументы из командной строки
+        ticker = sys.argv[1]   # Например: 'MSFT'
+        field = sys.argv[2]    # Например: 'Total Revenue'
+
+        # 2. Формируем URL для запроса
+        url = f'https://finance.yahoo.com/quote/{ticker}/financials?p={ticker}'
+        
+        # 3. Заголовки, чтобы сайт думал, что мы браузер
+        headers = {
+            "User-Agent": "Mozilla/5.0 ... Safari/537.36",
+            "Accept": "text/html,..."
+        }
+        
+        # 4. Отправляем HTTP-запрос с httpx
+        response = httpx.get(url, headers=headers, follow_redirects=True)
+        
+        # 5. Проверяем успешность запроса
+        if response.status_code != 200:
+            raise Exception(f'Failed... {response.status_code}')
+        
+        # 6. Парсим HTML и извлекаем нужные данные
+        values = parse_html(response, field)
+        
+        # 7. Выводим результат в виде кортежа
+        print((field, *values))
+        
+    except Exception as e:
+        # 8. Обрабатываем любые ошибки
+        print(e)
+
+if __name__ == '__main__':
+    main()
+
+Если файл запущен напрямую (а не импортирован как модуль), то вызвать функцию main().
+
+Зачем follow_redirects=True?
+Yahoo Finance иногда перенаправляет запросы
+Без этого можно получить ошибку 301/302
+httpx автоматически следует за перенаправлениями
+
+Зачем User-Agent заголовок?
+Некоторые сайты блокируют запросы без User-Agent
+Заголовок делает запрос похожим на запрос от браузера
+Без него можно получить ошибку 403 (Forbidden)
+
+Что делает *values в print?
+values — это список: ['134,249,000', '125,843,000', ...]
+*values "распаковывает" список: превращает в отдельные аргументы
+print((field, *values)) → print(('Total Revenue', '134,249,000', '125,843,000', ...))

@@ -1,0 +1,3 @@
+ivan.ivanov@corp.com
+maria.smirnova@corp.com
+peter.petrov@corp.com

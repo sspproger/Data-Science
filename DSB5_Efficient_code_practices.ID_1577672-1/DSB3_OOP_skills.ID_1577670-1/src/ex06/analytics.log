@@ -1,0 +1,54 @@
+2026-01-26 11:50:52 Starting make_report program
+2026-01-26 11:50:52 Research class initialized with file: data.csv
+2026-01-26 11:50:52 Reading data from file
+2026-01-26 11:50:52 Reading file with file_reader method
+2026-01-26 11:50:52 Successfully read 11 observations
+2026-01-26 11:50:52 Creating Analytics instance
+2026-01-26 11:50:52 Calculations class initialized with data
+2026-01-26 11:50:52 Getting counts
+2026-01-26 11:50:52 Calculating counts of heads and tails
+2026-01-26 11:50:52 Counts calculated: heads=5, tails=6
+2026-01-26 11:50:52 Calculating fractions
+2026-01-26 11:50:52 Calculating fractions
+2026-01-26 11:50:52 Fractions calculated: heads=0.4545, tails=0.5454
+2026-01-26 11:50:52 Generating 3 predictions
+2026-01-26 11:50:52 Generating 3 random predictions
+2026-01-26 11:50:52 Prediction 1: heads=0, tails=1
+2026-01-26 11:50:52 Prediction 2: heads=1, tails=0
+2026-01-26 11:50:52 Prediction 3: heads=1, tails=0
+2026-01-26 11:50:52 Generated 3 predictions
+2026-01-26 11:50:52 Formatting report
+2026-01-26 11:50:52 Saving report to file
+2026-01-26 11:50:52 Saving file: report.txt
+2026-01-26 11:50:52 File saved successfully: report.txt
+2026-01-26 11:50:52 Sending success message to Telegram
+2026-01-26 11:50:52 Sending message to Telegram: The report has been successfully created
+2026-01-26 11:50:52 Telegram message sent: The report has been successfully created
+2026-01-26 11:50:52 Program completed successfully
+2026-01-26 18:14:09 Starting make_report program
+2026-01-26 18:14:09 Research class initialized with file: data.csv
+2026-01-26 18:14:09 Reading data from file
+2026-01-26 18:14:09 Reading file with file_reader method
+2026-01-26 18:14:09 Successfully read 11 observations
+2026-01-26 18:14:09 Creating Analytics instance
+2026-01-26 18:14:09 Calculations class initialized with data
+2026-01-26 18:14:09 Getting counts
+2026-01-26 18:14:09 Calculating counts of heads and tails
+2026-01-26 18:14:09 Counts calculated: heads=5, tails=6
+2026-01-26 18:14:09 Calculating fractions
+2026-01-26 18:14:09 Calculating fractions
+2026-01-26 18:14:09 Fractions calculated: heads=0.4545, tails=0.5454
+2026-01-26 18:14:09 Generating 3 predictions
+2026-01-26 18:14:09 Generating 3 random predictions
+2026-01-26 18:14:09 Prediction 1: heads=1, tails=0
+2026-01-26 18:14:09 Prediction 2: heads=1, tails=0
+2026-01-26 18:14:09 Prediction 3: heads=0, tails=1
+2026-01-26 18:14:09 Generated 3 predictions
+2026-01-26 18:14:09 Formatting report
+2026-01-26 18:14:09 Saving report to file
+2026-01-26 18:14:09 Saving file: report.txt
+2026-01-26 18:14:09 File saved successfully: report.txt
+2026-01-26 18:14:09 Sending success message to Telegram
+2026-01-26 18:14:09 Sending message to Telegram: The report has been successfully created
+2026-01-26 18:14:09 Telegram message sent: The report has been successfully created
+2026-01-26 18:14:09 Program completed successfully
